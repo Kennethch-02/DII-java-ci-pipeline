@@ -1,4 +1,11 @@
 <project name="java-ci-pipeline">
+    <property name="src" location="src" />
+    <property name="build" location="build" />
+    <property name="dist" location="dist" />
+
+    <description>
+        simple example build file
+    </description>
     <target name="init">
         <mkdir dir="classes" />
         <mkdir dir="build" />
@@ -13,4 +20,18 @@
         <delete dir="classes" />
         <delete dir="build" />
     </target>
+
+    <junit printsummary="yes" haltonfailure="yes" showoutput="yes" >
+        <classpath>
+            <pathelement path="($compilar'"/>
+        </classpath>
+        <batchtest fork="yes" todir="($reportes'/salida/">
+            <formatter type="xml"/>
+            <fileset dir="($codigo'">
+                <include name="**/*Prueba*.java"/>
+            </fileset>
+        </batchtest>
+    </junit>
 </project>
+
+
